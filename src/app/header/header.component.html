@@ -1,0 +1,67 @@
+<!-- header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" routerLink="/home">
+            <img src="assets/images/logo.png" class="logo img-fluid" alt="">Nicole Leifheit
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-toggle" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-toggle " id="navbarNavAltMarkup">
+            <ul class="navbar-nav mx-lg-auto">
+                <li>
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="/sobre" routerLinkActive="active">Sobre Mim</a>
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                     aria-expanded="false">Pages
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu second mt-2" style="display: none;">
+                        <a class="dropdown-item scroll" href="#models">Top Models</a>
+                        <a class="dropdown-item scroll" href="#pricing">Plans</a>
+                        <a class="dropdown-item" routerLink="/sobre">Our Designers</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="blog.html">Blog Page</a>
+                        <a class="dropdown-item" href="single.html">Single Page</a>
+                    </div>
+                </li> -->
+                <li>
+                    <a class="nav-link" routerLink="/galeria" routerLinkActive="active">Galeria</a>
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="/contato" routerLinkActive="active">Contato</a>
+                </li>
+            </ul>
+            <!-- Redes Sociais -->
+            <div class="header-social-abls text-center mt-lg-0 mt-4">
+                <ul class="list-unstyled">
+                    <li *ngIf="institutionalData.facebook">
+                        <a target=”_blank” [href]="institutionalData.facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li *ngIf="institutionalData.whatsApp" class="mx-1">
+                        <a target=”_blank” [href]="institutionalData.whatsApp">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li *ngIf="institutionalData.instagram">
+                        <a target=”_blank” [href]="institutionalData.instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //Redes Sociais -->
+        </div>
+    </nav>
+</header>
+<!-- //header -->

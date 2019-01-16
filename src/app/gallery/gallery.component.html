@@ -1,0 +1,37 @@
+<!-- banner -->
+<div class="main-banner-abl-2">
+</div>
+<!-- //banner -->
+
+<!-- page details -->
+<div class="breadcrumb-agile">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/home">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+    </ol>
+  </nav>
+</div>
+<!-- //page details -->
+
+<!-- gallery -->
+<div class="gallery-agile py-5">
+  <div class="container py-xl-5 py-lg-3">
+    <!-- heading title -->
+    <div class="text-center mb-lg-5 mb-4">
+      <h3 class="title-wthree mb-2">
+        Novas tendências<span class="mt-2 text-uppercase font-weight-bold">Minha Galeria</span></h3>
+    </div>
+    <!-- //heading title -->
+    <div class="row gallery-agile-kmsrow">
+      <div *ngFor="let image of images; let i=index" class="col-md-4 col-sm-6 gallery-agile-grids mt-3">
+        <div class="portfolio-hover">
+          <img (click)="open(i)" [src]="image.thumb" class="img-fluid zoom-img" [alt]="image.caption" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //gallery -->

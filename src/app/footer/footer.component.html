@@ -1,0 +1,59 @@
+<!-- footer -->
+<footer class="footer-emp-abls py-5">
+  <div class="container py-xl-5 py-lg-3">
+    <div class="row footer-top">
+      <div class="col-lg-5 footer-grid-wthree">
+        <h1 class="footer-title text-white mb-4">Entre Em Contato</h1>
+        <div class="contact-info">
+          <h4 class="text-light text-uppercase mb-2">Localização :</h4>
+          <p>{{institutionalData.location.address}}, <span>{{institutionalData.location.city}}</span></p>
+          <div class="phone mt-4 pt-2">
+            <h4 class="text-light text-uppercase mb-2">Contato :</h4>
+            <p>Telefone : {{institutionalData.phone}}
+              <a *ngIf="institutionalData.whatsApp" class="mx-1" target=”_blank” [href]="institutionalData.whatsApp">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </p>
+            <p>Email :
+              <a [href]="institutionalData.email">{{institutionalData.email}}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 footer-grid-wthree mt-lg-0 mt-4">
+        <h2 class="footer-title text-white mb-4">Links Úteis</h2>
+        <ul class="links list-unstyled">
+          <li>
+            <a routerLink="/home">Home</a>
+          </li>
+          <li class="my-2">
+            <a routerLink="/sobre">Sobre Mim</a>
+          </li>
+          <li>
+            <a class="scroll" href="#pricing">Serviços</a>
+          </li>
+          <li class="my-2">
+            <a routerLink="/blog">Blog</a>
+          </li>
+          <li class="my-2">
+            <a routerLink="/galeria">Galeria</a>
+          </li>
+          <li>
+            <a routerLink="/contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 footer-grid-wthree mt-lg-0 mt-5">
+        <div class="footer-title">
+          <a class="navbar-brand" routerLink="/home">
+            <img src="assets/images/logo2.png" class="logo img-fluid" alt="">Nicole Leifheit
+          </a>
+        </div>
+        <p class="copy-right text-center mt-4">&copy; 2019 Nicole Leifheit. Todos os Direitos Reservados| Design by
+          <a href="https://www.linkedin.com/in/mateus-abdala/"> Good Samaritan </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- //footer -->
