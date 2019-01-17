@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $ :any;
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
+    // set ScrollSpy for Animations
+    $(window).scroll(function () {
+			if ($(document).scrollTop() > 50) {
+				$('nav').addClass('shrink');
+			} else {
+				$('nav').removeClass('shrink');
+			}
+		});
+    // set Mock
     localStorage.setItem('gallery', JSON.stringify(this.gallery));
     localStorage.setItem('carousel', JSON.stringify(this.carousel));
     localStorage.setItem('institutionalData', JSON.stringify(this.institutionalData));

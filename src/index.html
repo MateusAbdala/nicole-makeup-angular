@@ -36,36 +36,9 @@
   
 	<!-- JavaScript -->
 	<script src="assets/js/jquery-2.2.3.min.js"></script>
-	<!-- dropdown smooth -->
-	<script>
-		$(document).ready(function () {
-			$(".dropdown").hover(
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-					$(this).toggleClass('open');
-				},
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-					$(this).toggleClass('open');
-				}
-			);
-		});
-	</script>
-	<!-- fixed nav -->
-	<script>
-		$(window).scroll(function () {
-			if ($(document).scrollTop() > 50) {
-				$('nav').addClass('shrink');
-			} else {
-				$('nav').removeClass('shrink');
-			}
-		});
-	</script>
-	<link rel="stylesheet" href="assets/css/carousel.css" type="text/css" media="all" />
 	<script src="assets/js/SmoothScroll.min.js"></script>
 	<script src="assets/js/move-top.js"></script>
 	<script src="assets/js/easing.js"></script>
-	<script src="assets/js/look.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
 </body>
 </html>

@@ -25,12 +25,10 @@ export class GalleryComponent implements OnInit {
   }
 
   open(index: number): void {
-    // open lightbox
     this._lightbox.open(this.images, index, { wrapAround: true, showImageNumberLabel: true });
   }
 
   close(): void {
-    // close lightbox programmatically
     this._lightbox.close();
   }
 }

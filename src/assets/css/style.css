@@ -717,7 +717,7 @@ ul.links li a:hover,
 /* //footer */
 /* inner pages */
 .main-banner-abl-2 {
-    background: url(../images/banner2.jpg) no-repeat 0px -115px;
+    background: url(../images/banner2.jpg) no-repeat 0px -425px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1031,7 +1031,7 @@ button.contact-submit {
     a.navbar-brand img {
         top: -6px;
         left: 24px;
-        width: 40%;
+        width: 20%;
     }
 
     .navbar-light .navbar-toggler {
@@ -1305,7 +1305,7 @@ button.contact-submit {
     a.navbar-brand img {
         top: -3px;
         left: 16px;
-        width: 40%;
+        width: 20%;
     }
 }
 
