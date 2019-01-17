@@ -15,6 +15,7 @@ import { BlogModule } from './blog/blog.module';
 import { LightboxModule } from 'ngx-lightbox';
 import { InstitutionalService } from './services/institutional.service';
 import { GalleryService } from './services/gallery.service';
+import { BeautyServicesComponent } from './beauty-services/beauty-services.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GalleryService } from './services/gallery.service';
     AboutComponent,
     GalleryComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BeautyServicesComponent
   ],
   imports: [
     BrowserModule,

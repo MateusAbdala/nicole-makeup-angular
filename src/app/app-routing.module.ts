@@ -6,11 +6,13 @@ import { BlogComponent } from './blog/blog.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BeautyServicesComponent } from './beauty-services/beauty-services.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, },
   { path: 'sobre', component: AboutComponent, },
   { path: 'blog', component: BlogComponent, },
+  { path: 'servicos', component: BeautyServicesComponent, },
   { path: 'galeria', component: GalleryComponent, },
   { path: 'contato', component: ContactComponent, },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
