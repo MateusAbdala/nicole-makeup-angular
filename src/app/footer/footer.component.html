@@ -6,7 +6,7 @@
         <h1 class="footer-title text-white mb-4">Entre Em Contato</h1>
         <div class="contact-info">
           <h4 class="text-light text-uppercase mb-2">Localização :</h4>
-          <p>{{institutionalData.location.address}}, <span>{{institutionalData.location.city}}</span></p>
+          <p *ngIf="institutionalData.location">{{institutionalData.location.address}}, <span>{{institutionalData.location.city}}</span></p>
           <div class="phone mt-4 pt-2">
             <h4 class="text-light text-uppercase mb-2">Contato :</h4>
             <p>Telefone : {{institutionalData.phone}}
@@ -14,7 +14,7 @@
                 <i class="fa fa-whatsapp" aria-hidden="true"></i>
               </a>
             </p>
-            <p>Email :
+            <p *ngIf="institutionalData.email">Email :
               <a [href]="institutionalData.email">{{institutionalData.email}}</a>
             </p>
           </div>
@@ -32,9 +32,6 @@
           <li>
             <a routerLink="/servicos">Serviços</a>
           </li>
-          <!-- <li class="my-2">
-            <a routerLink="/blog">Blog</a>
-          </li> -->
           <li class="my-2">
             <a routerLink="/galeria">Galeria</a>
           </li>
