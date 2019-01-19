@@ -829,9 +829,16 @@ h3.about-title {
 /* //team */
 
 /* middle section */
+.parallax-banner1 {
+    background: url(https://d10qoa1dy3vloz.cloudfront.net/resized/840x/slots-img/cat/category_makeup_840x400-9wmww.jpg)no-repeat center fixed;
+}
+
+.parallax-banner2 {
+    background: url(../images/banner2.jpg)no-repeat center fixed;
+}
+
 
 .middle-abl {
-    background: url(../images/banner2.jpg)no-repeat center fixed;
     background-size: cover;
     background-position: inherit;
 }

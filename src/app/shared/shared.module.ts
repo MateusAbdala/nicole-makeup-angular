@@ -5,7 +5,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { GridShortcutsComponent } from './grid-shortcuts/grid-shortcuts.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ParallaxComponent } from './parallax/parallax.component';
-import { SharedComponent } from './shared.component';
 import { PricingComponent } from './pricing/pricing.component';
 
 @NgModule({

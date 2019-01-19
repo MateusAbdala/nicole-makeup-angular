@@ -11,7 +11,6 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
-import { BlogModule } from './blog/blog.module';
 import { LightboxModule } from 'ngx-lightbox';
 import { InstitutionalService } from './services/institutional.service';
 import { GalleryService } from './services/gallery.service';
@@ -27,13 +26,12 @@ import { BeautyServicesComponent } from './beauty-services/beauty-services.compo
     GalleryComponent,
     ContactComponent,
     NotFoundComponent,
-    BeautyServicesComponent
+    BeautyServicesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BlogModule,
     LightboxModule
   ],
   providers: [GalleryService, InstitutionalService],
