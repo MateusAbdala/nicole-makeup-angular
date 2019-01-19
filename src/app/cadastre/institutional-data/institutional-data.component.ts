@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InstitutionalService } from 'src/app/services/institutional.service';
 
 @Component({
   selector: 'app-institutional-data',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstitutionalDataComponent implements OnInit {
 
-  constructor() { }
+  private institutionalData: any;
 
-  ngOnInit() {
+  constructor(private institutionalService: InstitutionalService) { }
+
+  ngOnInit(): void {
+    this.fetchInstitutionalData();
+  }
+
+  fetchInstitutionalData(): void {
+    this.institutionalService.getInstitutionalData().subscribe((resp: any) => this.institutionalData = resp);
   }
 
 }

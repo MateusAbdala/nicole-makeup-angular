@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IAlbum } from 'ngx-lightbox';
+import { GalleryService } from 'src/app/services/gallery.service';
 
 @Component({
   selector: 'app-gallery-data',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryDataComponent implements OnInit {
 
-  constructor() { }
+  private images: Array<IAlbum> = [];
 
-  ngOnInit() {
+  constructor(private galleryService: GalleryService) { }
+
+  ngOnInit(): void {
+    this.fetchImages();
   }
 
+  fetchImages(): void {
+    this.galleryService.getImages().subscribe((resp: any) => this.images = resp);
+  }
 }
