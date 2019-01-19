@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lightbox, IAlbum } from 'ngx-lightbox';
-import { GalleryService } from '../services/gallery.service';
+import { GalleryService } from '../../services/gallery.service';
 
 @Component({
   selector: 'app-gallery',
