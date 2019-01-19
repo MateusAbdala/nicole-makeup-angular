@@ -5,11 +5,13 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { GridShortcutsComponent } from './grid-shortcuts/grid-shortcuts.component';
 import { ParallaxComponent } from './parallax/parallax.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SubscribeComponent, CarouselComponent, GridShortcutsComponent, ParallaxComponent, PricingComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [SubscribeComponent, CarouselComponent, GridShortcutsComponent, ParallaxComponent, PricingComponent]
 })
