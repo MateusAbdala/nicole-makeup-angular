@@ -10,7 +10,11 @@ export class InstitutionalService {
 
   getInstitutionalData(): any {
     const institutionalData = JSON.parse(localStorage.getItem('institutionalData'));
-    console.log(institutionalData)
     return of(institutionalData);
+  }
+
+  sendInstitutionalData(payload): any {
+    localStorage.setItem('institutionalData', JSON.stringify(payload));
+    return of(true);
   }
 }
