@@ -10,6 +10,7 @@ import { InstitutionalService } from './services/institutional.service';
 import { GalleryService } from './services/gallery.service';
 import { BeautyServicesService } from './services/beauty-services.service';
 import { CntService } from './services/cnt.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CntService } from './services/cnt.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     LightboxModule
   ],
