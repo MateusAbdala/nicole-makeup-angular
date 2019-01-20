@@ -17,91 +17,84 @@
 </div>
 <!-- //welcome section -->
 
-<!-- grids -->
-<div class="serives-agile py-5 bg-light">
-  <div class="container py-xl-5 py-lg-3">
-    <div class="row support-bottom">
-      <pre>{{ institutionalData | json }}</pre>
-    </div>
-  </div>
-</div>
-<!-- //grids -->
-
 <!-- form -->
-<form class="container py-xl-5 py-lg-3" novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form">
-  <div class="form-group">
-    <label>Facebook</label>
-    <input type="text" placeholder="Your Facebook" formControlName="facebook" class="form-control" [ngClass]="{ 'is-invalid': form.get('facebook').touched && form.get('facebook').hasError('required') }" />
-    <div *ngIf="form.get('facebook').touched && form.get('facebook').hasError('required')" class="invalid-feedback">
-      Facebook é necessário.
+<div class="py-xl-5 py-lg-3 bg-light">
+  <form class="container" novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form">
+    <div class="form-group">
+      <label>Facebook</label>
+      <input type="text" placeholder="Your Facebook" formControlName="facebook" class="form-control" [ngClass]="{ 'is-invalid': form.get('facebook').touched && form.get('facebook').hasError('required') }" />
+      <div *ngIf="form.get('facebook').touched && form.get('facebook').hasError('required')" class="invalid-feedback">
+        Facebook é necessário.
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>WhatsApp</label>
-    <input type="text" placeholder="Your whatsApp" formControlName="whatsApp" class="form-control" [ngClass]="{ 'is-invalid': form.get('whatsApp').touched && form.get('whatsApp').hasError('required') }" />
-    <div *ngIf="form.get('whatsApp').touched && form.get('whatsApp').hasError('required')" class="invalid-feedback">
-      WhatsApp é necessário.
+    <div class="form-group">
+      <label>WhatsApp</label>
+      <input type="text" placeholder="Your whatsApp" formControlName="whatsApp" class="form-control" [ngClass]="{ 'is-invalid': form.get('whatsApp').touched && form.get('whatsApp').hasError('required') }" />
+      <div *ngIf="form.get('whatsApp').touched && form.get('whatsApp').hasError('required')" class="invalid-feedback">
+        WhatsApp é necessário.
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Instagram</label>
-    <input type="text" placeholder="Your instagram" formControlName="instagram" class="form-control" [ngClass]="{ 'is-invalid': form.get('instagram').touched && form.get('instagram').hasError('required') }" />
-    <div *ngIf="form.get('instagram').touched && form.get('instagram').hasError('required')" class="invalid-feedback">
-      Instagram é necessário.
+    <div class="form-group">
+      <label>Instagram</label>
+      <input type="text" placeholder="Your instagram" formControlName="instagram" class="form-control" [ngClass]="{ 'is-invalid': form.get('instagram').touched && form.get('instagram').hasError('required') }" />
+      <div *ngIf="form.get('instagram').touched && form.get('instagram').hasError('required')" class="invalid-feedback">
+        Instagram é necessário.
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Telefone</label>
-    <input type="text" placeholder="Your phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': form.get('phone').touched && form.get('phone').hasError('required') }" />
-    <div *ngIf="form.get('phone').touched && form.get('phone').hasError('required')" class="invalid-feedback">
-      Telefone é necessário.
+    <div class="form-group">
+      <label>Telefone</label>
+      <input type="text" placeholder="Your phone" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': form.get('phone').touched && form.get('phone').hasError('required') }" />
+      <div *ngIf="form.get('phone').touched && form.get('phone').hasError('required')" class="invalid-feedback">
+        Telefone é necessário.
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="text" placeholder="Your email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.get('email').touched && form.get('email').hasError('required') }" />
-    <div *ngIf="form.get('email').touched && form.get('email').hasError('required')" class="invalid-feedback">
-      Email é necessário.
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" placeholder="Your email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.get('email').touched && form.get('email').hasError('required') }" />
+      <div *ngIf="form.get('email').touched && form.get('email').hasError('required')" class="invalid-feedback">
+        Email é necessário.
+      </div>
     </div>
-  </div>
 
-  <div formGroupName="location">
-    <div class="form-group">
-      <label>Endereço</label>
-      <input type="text" placeholder="Your address" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('address').touched && form.get('location').get('address').hasError('required') }" />
-      <div *ngIf="form.get('location').get('address').touched && form.get('location').get('address').hasError('required')"
-        class="invalid-feedback">
-        Endereço é necessário.
+    <div formGroupName="location">
+      <div class="form-group">
+        <label>Endereço</label>
+        <input type="text" placeholder="Your address" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('address').touched && form.get('location').get('address').hasError('required') }" />
+        <div *ngIf="form.get('location').get('address').touched && form.get('location').get('address').hasError('required')"
+          class="invalid-feedback">
+          Endereço é necessário.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Cidade</label>
+        <input type="text" placeholder="Your city" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('city').touched && form.get('location').get('city').hasError('required') }" />
+        <div *ngIf="form.get('location').get('city').touched && form.get('location').get('city').hasError('required')"
+          class="invalid-feedback">
+          Cidade é necessário.
+        </div>
+      </div>
+      <div class="form-group"> <label>Latitude</label>
+        <input type="text" placeholder="Your latitude" formControlName="latitude" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('latitude').touched && form.get('location').get('latitude').hasError('required') }" />
+        <div *ngIf="form.get('location').get('latitude').touched && form.get('location').get('latitude').hasError('required')"
+          class="invalid-feedback">
+          Latitude é necessário.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Longitude</label>
+        <input type="text" placeholder="Your longitude" formControlName="longitude" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('longitude').touched && form.get('location').get('longitude').hasError('required') }" />
+        <div *ngIf="form.get('location').get('longitude').touched && form.get('location').get('longitude').hasError('required')"
+          class="invalid-feedback">
+          Longitude é necessário.
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label>Cidade</label>
-      <input type="text" placeholder="Your city" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('city').touched && form.get('location').get('city').hasError('required') }" />
-      <div *ngIf="form.get('location').get('city').touched && form.get('location').get('city').hasError('required')"
-        class="invalid-feedback">
-        Cidade é necessário.
-      </div>
-    </div>
-    <div class="form-group"> <label>Latitude</label>
-      <input type="text" placeholder="Your latitude" formControlName="latitude" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('latitude').touched && form.get('location').get('latitude').hasError('required') }" />
-      <div *ngIf="form.get('location').get('latitude').touched && form.get('location').get('latitude').hasError('required')"
-        class="invalid-feedback">
-        Latitude é necessário.
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Longitude</label>
-      <input type="text" placeholder="Your longitude" formControlName="longitude" class="form-control" [ngClass]="{ 'is-invalid': form.get('location').get('longitude').touched && form.get('location').get('longitude').hasError('required') }" />
-      <div *ngIf="form.get('location').get('longitude').touched && form.get('location').get('longitude').hasError('required')"
-        class="invalid-feedback">
-        Longitude é necessário.
-      </div>
-    </div>
-  </div>
 
-  <div class="form-group">
-    <button type="submit" class="btn contact-submit mt-4 submit" [disabled]="form.invalid">Salvar informações</button>
-  </div>
-</form>
+    <div class="form-group">
+      <button type="submit" class="btn contact-submit mt-4 submit" [disabled]="form.invalid">Salvar informações</button>
+    </div>
+  </form>
+</div>
 <!-- //form -->
+
 <app-categories></app-categories>
