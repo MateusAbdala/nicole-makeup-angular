@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { InstitutionalService } from './services/institutional.service';
 import { GalleryService } from './services/gallery.service';
+import { BeautyServicesService } from './services/beauty-services.service';
+import { CntService } from './services/cnt.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,12 @@ import { GalleryService } from './services/gallery.service';
     AppRoutingModule,
     LightboxModule
   ],
-  providers: [GalleryService, InstitutionalService],
+  providers: [
+    CntService,
+    BeautyServicesService,
+    GalleryService,
+    InstitutionalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
