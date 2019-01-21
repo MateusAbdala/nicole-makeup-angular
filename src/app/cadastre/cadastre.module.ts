@@ -10,6 +10,7 @@ import { BeautyServicesDataComponent } from './beauty-services-data/beauty-servi
 import { CategoriesComponent } from './categories/categories.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropZoneDirective } from './gallery-data/drop-zone.directive';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DropZoneDirective } from './gallery-data/drop-zone.directive';
     CommonModule,
     CadastreRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule
   ]
 })
 export class CadastreModule { }

@@ -11,3 +11,16 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.drag-scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .drag-zone {
+        white-space: nowrap;
+        display: table;
+        .drag-item {
+            display: inline-block;
+        }
+    }
+
+}
