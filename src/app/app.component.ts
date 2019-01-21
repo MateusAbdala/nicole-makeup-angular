@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+declare var $: any, jQuery: any;
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,22 @@ declare var $: any;
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    // set ScrollSpy for Animations
+    $(document).ready(function () {
+      jQuery(document).ready(function ($) {
+        $(".scroll ").click(function (event) {
+          event.preventDefault();
+          $('html,body').animate({
+            scrollTop: $(this.hash).offset().top
+          }, 1000);
+        });
+      });
+      $(document).ready(function () {
+        $().UItoTop({
+          easingType: 'easeOutQuart'
+        });
+      });
+    });
+    // set ScrollSpy for Navbar
     $(window).scroll(function () {
       if ($(document).scrollTop() > 50) {
         $('nav').addClass('shrink');
@@ -17,9 +32,9 @@ export class AppComponent implements OnInit {
         $('nav').removeClass('shrink');
       }
     });
+
     // set Mock
     localStorage.setItem('gallery', JSON.stringify(this.gallery));
-    localStorage.setItem('carousel', JSON.stringify(this.carousel));
     localStorage.setItem('institutionalData', JSON.stringify(this.institutionalData));
     localStorage.setItem('beautyServices', JSON.stringify(this.beautyServices));
   }
@@ -28,92 +43,140 @@ export class AppComponent implements OnInit {
   // Mocked Items
   gallery: any = [
     {
+      id: 1,
       src: 'assets/images/g1.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g1.jpg'
+      thumb: 'assets/images/g1.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 2,
       src: 'assets/images/g2.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g2.jpg'
+      thumb: 'assets/images/g2.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 3,
       src: 'assets/images/g3.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g3.jpg'
+      thumb: 'assets/images/g3.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 4,
       src: 'assets/images/g4.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g4.jpg'
+      thumb: 'assets/images/g4.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 5,
       src: 'assets/images/g5.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g5.jpg'
+      thumb: 'assets/images/g5.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 6,
       src: 'assets/images/g6.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g6.jpg'
+      thumb: 'assets/images/g6.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 7,
       src: 'assets/images/g7.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g7.jpg'
+      thumb: 'assets/images/g7.jpg',
+      order: null,
+      modelsList: false
     },
     {
+      id: 8,
       src: 'assets/images/g8.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/g8.jpg'
+      thumb: 'assets/images/g8.jpg',
+      order: null,
+      modelsList: false
     },
-  ];
-
-  carousel: any = [
     {
+      id: 9,
       src: 'assets/images/m1.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m1.jpg'
+      thumb: 'assets/images/m1.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 10,
       src: 'assets/images/m2.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m2.jpg'
+      thumb: 'assets/images/m2.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 11,
       src: 'assets/images/m3.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m3.jpg'
+      thumb: 'assets/images/m3.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 12,
       src: 'assets/images/m4.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m4.jpg'
+      thumb: 'assets/images/m4.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 13,
       src: 'assets/images/m5.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m5.jpg'
+      thumb: 'assets/images/m5.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 14,
       src: 'assets/images/m6.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m6.jpg'
+      thumb: 'assets/images/m6.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 15,
       src: 'assets/images/m7.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m7.jpg'
+      thumb: 'assets/images/m7.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 16,
       src: 'assets/images/m8.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m8.jpg'
+      thumb: 'assets/images/m8.jpg',
+      order: null,
+      modelsList: true
     },
     {
+      id: 17,
       src: 'assets/images/m9.jpg',
       caption: 'Descrição da Imagem',
-      thumb: 'assets/images/m9.jpg'
+      thumb: 'assets/images/m9.jpg',
+      order: null,
+      modelsList: true
     },
   ];
 

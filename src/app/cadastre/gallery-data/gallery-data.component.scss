@@ -1,0 +1,27 @@
+.dropzone {
+    height: 170px;
+    display: table;
+    width: 100%;
+    border: dashed 2px #6488f9;
+    margin-bottom: 30px;
+    font-size: 50px;
+    color: #6488f9;
+}
+
+.thumbnail-data {
+    position: relative;
+    height: 255px;
+    overflow: hidden;
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: auto;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.icon-options i {
+    font-size: 1.5em;
+}

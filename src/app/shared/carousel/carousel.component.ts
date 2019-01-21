@@ -21,7 +21,7 @@ export class CarouselComponent implements OnInit {
   }
 
   fetchImages(): void {
-    this.galleryService.getImagesForCarousel().subscribe((resp: any) => this.imagesForCarousel = resp);
+    this.galleryService.getModelsImages().subscribe((resp: any) => this.imagesForCarousel = resp);
   }
 
   open(index: number): void {

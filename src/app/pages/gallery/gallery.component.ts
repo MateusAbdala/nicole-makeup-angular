@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Lightbox, IAlbum } from 'ngx-lightbox';
+import { Lightbox } from 'ngx-lightbox';
 import { GalleryService } from '../../services/gallery.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { GalleryService } from '../../services/gallery.service';
 })
 export class GalleryComponent implements OnInit {
 
-  private images: Array<IAlbum> = [];
+  private images: Array<any> = [];
 
   constructor(
     private galleryService: GalleryService,
@@ -25,7 +25,7 @@ export class GalleryComponent implements OnInit {
   }
 
   open(index: number): void {
-    this._lightbox.open(this.images, index, { wrapAround: true, showImageNumberLabel: true });
+    this._lightbox.open(this.images, index, { wrapAround: true, showImageNumberLabel: true, albumLabel: 'Imagem %1 de %2' });
   }
 
   close(): void {

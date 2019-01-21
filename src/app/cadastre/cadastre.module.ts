@@ -9,6 +9,7 @@ import { ModelsDataComponent } from './models-data/models-data.component';
 import { BeautyServicesDataComponent } from './beauty-services-data/beauty-services-data.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropZoneDirective } from './gallery-data/drop-zone.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GalleryDataComponent,
     ModelsDataComponent,
     BeautyServicesDataComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    DropZoneDirective
   ],
   imports: [
     CommonModule,

@@ -1,3 +1,46 @@
-<p>
-  models-data works!
-</p>
+<!-- banner -->
+<div class="main-banner-abl-2">
+  </div>
+  <!-- //banner -->
+  
+  <!-- welcome section -->
+  <div class="banner-bottom-agile text-center py-5">
+    <div class="container py-xl-5 py-lg-3">
+      <!-- heading title -->
+      <div class="mb-lg-5 mb-sm-4 mb-3">
+        <h3 class="title-wthree mb-2">
+          Configure a ordem<span class="mt-2 text-uppercase font-weight-bold">Modelos</span></h3>
+      </div>
+      <!-- //heading title -->
+      <p class="para-bottom-wthree">Primeiramente selecione as modelos em 'Galeria', então ordene aqui. </p>
+    </div>
+  </div>
+  <!-- //welcome section -->
+  
+  <!-- Models dragable -->
+<div class="container">
+    <div class="dropzone" (click)="fileInput.click()" (filesChangeEmiter)="onDropFile($event)" appDropZone>
+      <div class="text-wrapper py-lg-5">
+        <input type="file" (change)="onGetFile($event)" #fileInput hidden>
+        <h5 class="text-center card-title mt-3">Arraste e solte seu arquivo, ou clique para enviar</h5>
+      </div>
+    </div>
+  </div>
+  
+  <div class="serives-agile py-5 bg-light">
+    <div class="container py-xl-5 py-lg-3">
+      <div class="row support-bottom">
+        <div *ngFor="let model of models; let i=index; let editing=false" class="col-md-4 col-lg-3 support-grid mb-3">
+          <div class="back-icon-wthree bg-white">
+            <div class="bg-light thumbnail-data">
+              <img (click)="open(i)" [src]="model.thumb" [alt]="model.caption">
+            </div>
+            <p class="px-4" *ngIf="!editing">{{model.caption}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //Models dragable -->
+  
+  <app-categories></app-categories>
