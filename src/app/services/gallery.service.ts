@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { CntService } from './cnt.service';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { GalleryImage } from '../shared/models/galleryImage.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +29,15 @@ export class GalleryService {
     //   'conteudo', 1, 'galeria/modelos'
     // ));
 
-    const imagesForCarousel = JSON.parse(localStorage.getItem('gallery'));
-    console.log(imagesForCarousel.filter((i: any) => i.modelsList));
-    return of(imagesForCarousel.filter((i: any) => i.modelsList));
+    const modelos = JSON.parse(localStorage.getItem('gallery'));
+    console.log(modelos.filter((i: GalleryImage) => i.modelsList));
+    return of(modelos.filter((i: GalleryImage) => i.modelsList));
+  }
+
+  updateModels(modelos: Array<GalleryImage>): Observable<any> {
+    return this.http.put(this.cnt.connectTo(
+      'conteudo', 1, 'galeria/modelos'
+    ), modelos);
   }
 
   createMidia(file: File): Observable<any> {
@@ -42,13 +49,13 @@ export class GalleryService {
     ), formData);
   }
 
-  updateMidia(payload: any): Observable<any> {
+  updateMidia(payload: GalleryImage): Observable<any> {
     return this.http.put(this.cnt.connectTo(
       'conteudo', 1, `galeria/${payload.id}`
     ), payload);
   }
 
-  deleteMidia(id: string): Observable<any> {
+  deleteMidia(id: number): Observable<any> {
     return this.http.delete(this.cnt.connectTo(
       'conteudo', 1, `galeria/${id}`
     ));

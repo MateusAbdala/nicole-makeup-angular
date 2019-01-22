@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import { GalleryService } from 'src/app/services/gallery.service';
+import { GalleryImage } from 'src/app/shared/models/galleryImage.model';
 
 @Component({
   selector: 'app-gallery-data',
@@ -9,7 +10,7 @@ import { GalleryService } from 'src/app/services/gallery.service';
 })
 export class GalleryDataComponent implements OnInit {
 
-  private images: Array<any> = [];
+  private images: Array<GalleryImage> = [];
 
   constructor(
     private galleryService: GalleryService,
@@ -21,14 +22,14 @@ export class GalleryDataComponent implements OnInit {
   }
 
   fetchImages(): void {
-    this.galleryService.getImages().subscribe((resp: any) => this.images = resp);
+    this.galleryService.getImages().subscribe((resp: Array<GalleryImage>) => this.images = resp);
   }
 
   onGetFile(event: any): void {
     this.onDropFile(event.target.files[0]);
   }
 
-  onDropFile(file: any): void {
+  onDropFile(file: File): void {
     this.galleryService.createMidia(file).subscribe(
       () => {
         //reload
@@ -62,7 +63,7 @@ export class GalleryDataComponent implements OnInit {
   }
 
   open(index: number): void {
-    let images: any = this.images.map(i => { return { src: i.src } });
+    let images: Array<any> = this.images.map(i => { return { src: i.src } });
     this._lightbox.open(images, index, { wrapAround: true, showImageNumberLabel: true, albumLabel: 'Imagem %1 de %2' });
   }
 

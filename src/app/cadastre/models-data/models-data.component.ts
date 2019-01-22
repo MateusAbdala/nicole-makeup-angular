@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryService } from 'src/app/services/gallery.service';
 import { Lightbox } from 'ngx-lightbox';
+import { GalleryImage } from 'src/app/shared/models/galleryImage.model';
 
 @Component({
   selector: 'app-models-data',
@@ -9,7 +10,7 @@ import { Lightbox } from 'ngx-lightbox';
 })
 export class ModelsDataComponent implements OnInit {
 
-  private models: Array<any> = [];
+  private models: Array<GalleryImage> = [];
 
   constructor(
     private galleryService: GalleryService,
@@ -21,11 +22,11 @@ export class ModelsDataComponent implements OnInit {
   }
 
   fetchModels(): void {
-    this.galleryService.getModelsImages().subscribe((resp: any) => this.models = resp);
+    this.galleryService.getModelsImages().subscribe((resp: Array<GalleryImage>) => this.models = resp);
   }
 
   open(index: number): void {
-    let models: any = this.models.map(i => { return { src: i.src } });
+    let models: Array<any> = this.models.map(i => { return { src: i.src } });
     this._lightbox.open(models, index, { wrapAround: true, showImageNumberLabel: true, albumLabel: 'Imagem %1 de %2' });
   }
 
@@ -33,18 +34,26 @@ export class ModelsDataComponent implements OnInit {
     this._lightbox.close();
   }
 
-  drop(event: any) {
+  drop(event: any): void {
     this.moveItemInArray(this.models, event.previousIndex, event.currentIndex);
+    this.galleryService.updateModels(this.models).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
-  moveItemInArray(arr, old_index, new_index) {
-    if (new_index >= arr.length) {
-      var k = new_index - arr.length + 1;
+  moveItemInArray(array: Array<any>, old_index: number, new_index: number): Array<any> {
+    if (new_index >= array.length) {
+      let k = new_index - array.length + 1;
       while (k--) {
-        arr.push(undefined);
+        array.push(undefined);
       }
     }
-    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-    return arr; // for testing
+    array.splice(new_index, 0, array.splice(old_index, 1)[0]);
+    return array;
   };
 }

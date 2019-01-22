@@ -38,14 +38,14 @@
           <div class="p-lg-3 icon-button-ab icon-options">
             <i (click)="editing = true" class="fa fa-edit px-4" aria-hidden="true"></i>
             <i (click)="deleteImage(i)" class="fa fa-trash px-4" aria-hidden="true"></i>
-            <i (click)="(image.modelsList = !image.modelsList) && updateImage(i)" class="fa px-4" aria-hidden="true"
+            <i (click)="image.modelsList = !image.modelsList; updateImage(i)" class="fa px-4" aria-hidden="true"
               [ngClass]="image.modelsList ? 'fa-toggle-on' : 'fa-toggle-off'"></i>
           </div>
           <p class="px-4" *ngIf="!editing">{{image.caption}}</p>
           <div *ngIf="editing" class="form-group">
             <input type="text" [(ngModel)]="image.caption" placeholder="Digite a descrição da imagem" class="form-control" />
             <button class="btn btn-danger" (click)="editing = false">Cancelar</button>
-            <button class="btn btn-primary" (click)="updateImage(i) &&  editing = false">Salvar</button>
+            <button class="btn btn-primary" (click)="qediting = false; updateImage(i)">Salvar</button>
           </div>
         </div>
       </div>
