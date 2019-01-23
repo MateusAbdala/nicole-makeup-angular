@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropZoneDirective } from './gallery-data/drop-zone.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { loginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { loginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     DragDropModule
-  ]
+  ],
+  providers: [AuthGuard]
 })
 export class CadastreModule { }

@@ -6,14 +6,15 @@ import { GalleryDataComponent } from './gallery-data/gallery-data.component';
 import { ModelsDataComponent } from './models-data/models-data.component';
 import { BeautyServicesDataComponent } from './beauty-services-data/beauty-services-data.component';
 import { loginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: CadastreComponent, },
-  { path: 'institucional', component: InstitutionalDataComponent, },
-  { path: 'galeria', component: GalleryDataComponent, },
-  { path: 'modelos', component: ModelsDataComponent, },
-  { path: 'servicos', component: BeautyServicesDataComponent, },
-  { path: 'login', component: loginComponent, },
+  { path: '', component: CadastreComponent, canActivate: [AuthGuard] },
+  { path: 'institucional', component: InstitutionalDataComponent, canActivate: [AuthGuard] },
+  { path: 'galeria', component: GalleryDataComponent, canActivate: [AuthGuard] },
+  { path: 'modelos', component: ModelsDataComponent, canActivate: [AuthGuard] },
+  { path: 'servicos', component: BeautyServicesDataComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: loginComponent },
 ];
 
 @NgModule({
