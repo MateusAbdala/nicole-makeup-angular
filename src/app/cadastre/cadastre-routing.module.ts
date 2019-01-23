@@ -5,6 +5,7 @@ import { CadastreComponent } from './cadastre.component';
 import { GalleryDataComponent } from './gallery-data/gallery-data.component';
 import { ModelsDataComponent } from './models-data/models-data.component';
 import { BeautyServicesDataComponent } from './beauty-services-data/beauty-services-data.component';
+import { loginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: CadastreComponent, },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'galeria', component: GalleryDataComponent, },
   { path: 'modelos', component: ModelsDataComponent, },
   { path: 'servicos', component: BeautyServicesDataComponent, },
+  { path: 'login', component: loginComponent, },
 ];
 
 @NgModule({

@@ -31,6 +31,7 @@ export class ModelsDataComponent implements OnInit {
     this.moveItemInArray(this.models, event.previousIndex, event.currentIndex);
     this.galleryService.updateModels(this.models).subscribe(
       (resp) => {
+        this.toastr.success('Lista Atualizada!', 'Modelos');
         console.log(resp);
       },
       (error: Error) => {

@@ -11,6 +11,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropZoneDirective } from './gallery-data/drop-zone.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { loginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ModelsDataComponent,
     BeautyServicesDataComponent,
     CategoriesComponent,
-    DropZoneDirective
+    DropZoneDirective,
+    loginComponent
   ],
   imports: [
     CommonModule,

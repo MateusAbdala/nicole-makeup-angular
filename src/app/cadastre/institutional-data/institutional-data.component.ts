@@ -11,7 +11,6 @@ import { ToastrService } from 'ngx-toastr';
 export class InstitutionalDataComponent implements OnInit {
 
   form: FormGroup;
-  submitted = false;
 
   private institutionalData: any;
 
@@ -29,7 +28,7 @@ export class InstitutionalDataComponent implements OnInit {
     this.institutionalService.getInstitutionalData().subscribe(
       (resp: any) => {
         this.institutionalData = resp;
-        this.formFiller();
+        this.formCreator();
       },
       (error: Error) => {
         this.toastr.error(error.message, 'Institucional');
@@ -37,7 +36,7 @@ export class InstitutionalDataComponent implements OnInit {
     );
   }
 
-  formFiller(): void {
+  formCreator(): void {
     this.form = this.fb.group({
       facebook: [this.institutionalData.facebook, Validators.required],
       whatsApp: [this.institutionalData.whatsApp, Validators.required],
