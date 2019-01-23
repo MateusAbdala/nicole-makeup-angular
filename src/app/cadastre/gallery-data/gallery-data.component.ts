@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import { GalleryService } from 'src/app/services/gallery.service';
 import { GalleryImage } from 'src/app/shared/models/galleryImage.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-gallery-data',
@@ -14,7 +15,8 @@ export class GalleryDataComponent implements OnInit {
 
   constructor(
     private galleryService: GalleryService,
-    private _lightbox: Lightbox
+    private _lightbox: Lightbox,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,14 @@ export class GalleryDataComponent implements OnInit {
   }
 
   fetchImages(): void {
-    this.galleryService.getImages().subscribe((resp: Array<GalleryImage>) => this.images = resp);
+    this.galleryService.getImages().subscribe(
+      (resp: Array<GalleryImage>) => {
+        this.images = resp;
+      },
+      (error: Error) => {
+        this.toastr.error(error.message, 'Galeria');
+      }
+    );
   }
 
   onGetFile(event: any): void {
@@ -32,10 +41,10 @@ export class GalleryDataComponent implements OnInit {
   onDropFile(file: File): void {
     this.galleryService.createMidia(file).subscribe(
       () => {
-        //reload
+        this.fetchImages();
       },
-      (error) => {
-        console.error(error);
+      (error: Error) => {
+        this.toastr.error(error.message, 'Galeria');
       }
     );
   }
@@ -45,8 +54,8 @@ export class GalleryDataComponent implements OnInit {
       () => {
         this.fetchImages();
       },
-      (error) => {
-        console.error(error);
+      (error: Error) => {
+        this.toastr.error(error.message, 'Galeria');
       }
     );
   }
@@ -56,8 +65,8 @@ export class GalleryDataComponent implements OnInit {
       () => {
         this.fetchImages();
       },
-      (error) => {
-        console.error(error);
+      (error: Error) => {
+        this.toastr.error(error.message, 'Galeria');
       }
     );
   }

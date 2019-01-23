@@ -11,6 +11,8 @@ import { GalleryService } from './services/gallery.service';
 import { BeautyServicesService } from './services/beauty-services.service';
 import { CntService } from './services/cnt.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    LightboxModule
+    LightboxModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     CntService,

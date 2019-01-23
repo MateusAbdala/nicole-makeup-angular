@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { InstitutionalService } from 'src/app/services/institutional.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-institutional-data',
@@ -14,7 +15,11 @@ export class InstitutionalDataComponent implements OnInit {
 
   private institutionalData: any;
 
-  constructor(private institutionalService: InstitutionalService, private fb: FormBuilder) { }
+  constructor(
+    private institutionalService: InstitutionalService,
+    private fb: FormBuilder,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.fetchInstitutionalData();
@@ -25,6 +30,9 @@ export class InstitutionalDataComponent implements OnInit {
       (resp: any) => {
         this.institutionalData = resp;
         this.formFiller();
+      },
+      (error: Error) => {
+        this.toastr.error(error.message, 'Institucional');
       }
     );
   }
@@ -49,9 +57,11 @@ export class InstitutionalDataComponent implements OnInit {
     if (valid) {
       this.institutionalService.sendInstitutionalData(value).subscribe(
         () => {
-          console.log('chamando')
-          this.fetchInstitutionalData()
-        }
+          this.fetchInstitutionalData();
+        },
+        (error: Error) => {
+        this.toastr.error(error.message, 'Institucional');
+      }
       );
     }
   }

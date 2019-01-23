@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GalleryService } from 'src/app/services/gallery.service';
 import { Lightbox } from 'ngx-lightbox';
 import { GalleryImage } from 'src/app/shared/models/galleryImage.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-models-data',
@@ -14,7 +15,8 @@ export class ModelsDataComponent implements OnInit {
 
   constructor(
     private galleryService: GalleryService,
-    private _lightbox: Lightbox
+    private _lightbox: Lightbox,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -25,23 +27,14 @@ export class ModelsDataComponent implements OnInit {
     this.galleryService.getModelsImages().subscribe((resp: Array<GalleryImage>) => this.models = resp);
   }
 
-  open(index: number): void {
-    let models: Array<any> = this.models.map(i => { return { src: i.src } });
-    this._lightbox.open(models, index, { wrapAround: true, showImageNumberLabel: true, albumLabel: 'Imagem %1 de %2' });
-  }
-
-  close(): void {
-    this._lightbox.close();
-  }
-
   drop(event: any): void {
     this.moveItemInArray(this.models, event.previousIndex, event.currentIndex);
     this.galleryService.updateModels(this.models).subscribe(
       (resp) => {
         console.log(resp);
       },
-      (error) => {
-        console.error(error);
+      (error: Error) => {
+        this.toastr.error(error.message, 'Modelos');
       }
     );
   }
@@ -56,4 +49,13 @@ export class ModelsDataComponent implements OnInit {
     array.splice(new_index, 0, array.splice(old_index, 1)[0]);
     return array;
   };
+
+  open(index: number): void {
+    let models: Array<any> = this.models.map(i => { return { src: i.src } });
+    this._lightbox.open(models, index, { wrapAround: true, showImageNumberLabel: true, albumLabel: 'Imagem %1 de %2' });
+  }
+
+  close(): void {
+    this._lightbox.close();
+  }
 }

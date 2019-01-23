@@ -23,11 +23,11 @@ export class InstitutionalService {
   }
 
   sendInstitutionalData(payload): any {
-    // return this.http.put(this.cnt.connectTo(
-    //   'conteudo', 1, 'institucional'
-    // ), payload);
+    return this.http.put(this.cnt.connectTo(
+      'conteudo', 1, 'institucional'
+    ), payload);
 
-    localStorage.setItem('institutionalData', JSON.stringify(payload));
-    return of(true);
+    // localStorage.setItem('institutionalData', JSON.stringify(payload));
+    // return of(true);
   }
 }
