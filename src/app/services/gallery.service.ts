@@ -15,9 +15,7 @@ export class GalleryService {
   ) { }
 
   getImages(): Observable<any> {
-    // return this.http.get(this.cnt.connectTo(
-    //   'conteudo', 1, 'galeria'
-    // ));
+    // return this.http.get(this.cnt.connectTo(1, 'galeria'));
 
     const images = JSON.parse(localStorage.getItem('gallery'));
     console.log(images)
@@ -25,9 +23,7 @@ export class GalleryService {
   }
 
   getModelsImages(): Observable<any> {
-    // return this.http.get(this.cnt.connectTo(
-    //   'conteudo', 1, 'galeria/modelos'
-    // ));
+    // return this.http.get(this.cnt.connectTo(1, 'galeria/modelos'));
 
     const modelos = JSON.parse(localStorage.getItem('gallery'));
     console.log(modelos.filter((i: GalleryImage) => i.modelsList));
@@ -35,29 +31,21 @@ export class GalleryService {
   }
 
   updateModels(modelos: Array<GalleryImage>): Observable<any> {
-    return this.http.put(this.cnt.connectTo(
-      'conteudo', 1, 'galeria/modelos'
-    ), modelos);
+    return this.http.put(this.cnt.connectTo(1, 'galeria/modelos'), modelos);
   }
 
   createMidia(file: File): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
 
-    return this.http.post(this.cnt.connectTo(
-      'conteudo', 1, 'galeria'
-    ), formData);
+    return this.http.post(this.cnt.connectTo(1, 'galeria'), formData);
   }
 
   updateMidia(payload: GalleryImage): Observable<any> {
-    return this.http.put(this.cnt.connectTo(
-      'conteudo', 1, `galeria/${payload.id}`
-    ), payload);
+    return this.http.put(this.cnt.connectTo(1, `galeria/${payload.id}`), payload);
   }
 
   deleteMidia(id: number): Observable<any> {
-    return this.http.delete(this.cnt.connectTo(
-      'conteudo', 1, `galeria/${id}`
-    ));
+    return this.http.delete(this.cnt.connectTo(1, `galeria/${id}`));
   }
 }

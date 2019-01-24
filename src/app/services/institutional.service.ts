@@ -14,20 +14,13 @@ export class InstitutionalService {
   ) { }
 
   getInstitutionalData(): any {
-    // return this.http.get(this.cnt.connectTo(
-    //   'conteudo', 1, 'institucional'
-    // ));
+    // return this.http.get(this.cnt.connectTo(1, 'institucional'));
 
     const institutionalData = JSON.parse(localStorage.getItem('institutionalData'));
     return of(institutionalData);
   }
 
   sendInstitutionalData(payload): any {
-    return this.http.put(this.cnt.connectTo(
-      'conteudo', 1, 'institucional'
-    ), payload);
-
-    // localStorage.setItem('institutionalData', JSON.stringify(payload));
-    // return of(true);
+    return this.http.put(this.cnt.connectTo(1, 'institucional'), payload);
   }
 }

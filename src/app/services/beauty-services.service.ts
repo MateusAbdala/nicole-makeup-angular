@@ -12,11 +12,9 @@ export class BeautyServicesService {
     protected http: HttpClient,
     protected cnt: CntService
   ) { }
-  
+
   getBeautyServices(): any {
-    // return this.http.get(this.cnt.connectTo(
-    //   'conteudo', 1, 'servicos'
-    // ));
+    // return this.http.get(this.cnt.connectTo(1, 'servicos'));
 
     const beautyServices = JSON.parse(localStorage.getItem('beautyServices'));
     console.log(beautyServices)

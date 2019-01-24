@@ -185,7 +185,7 @@ export class AppComponent implements OnInit {
     whatsApp: 'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
     instagram: 'https://www.instagram.com/nicole_leifheit_makeup/',
     phone: '(51) 99790-8803',
-    email: '',
+    email: 'nicole.leifheit.makeup@gmail.com',
     location: {
       address: 'Bairro Guajuviras - Rua Trinta, Nº 07',
       city: 'Canoas RS',
