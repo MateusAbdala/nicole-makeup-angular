@@ -14,6 +14,7 @@ export class BeautyServicesService {
   ) { }
 
   getBeautyServices(): any {
+    // Todo: stop using mock data
     // return this.http.get(this.cnt.connectTo(1, 'servicos'));
 
     const beautyServices = JSON.parse(localStorage.getItem('beautyServices'));

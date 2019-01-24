@@ -14,6 +14,7 @@ export class InstitutionalService {
   ) { }
 
   getInstitutionalData(): any {
+    // Todo: stop using mock data
     // return this.http.get(this.cnt.connectTo(1, 'institucional'));
 
     const institutionalData = JSON.parse(localStorage.getItem('institutionalData'));

@@ -16,9 +16,6 @@ export class AuthService {
 
   authenticateUser(payload): any {
     return this.http.post(this.cnt.connectTo(1, 'login'), payload);
-
-    // localStorage.setItem('institutionalData', JSON.stringify(payload));
-    // return of(true);
   }
 
   logout(): void {

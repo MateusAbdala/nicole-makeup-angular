@@ -15,6 +15,7 @@ export class GalleryService {
   ) { }
 
   getImages(): Observable<any> {
+    // Todo: stop using mock data
     // return this.http.get(this.cnt.connectTo(1, 'galeria'));
 
     const images = JSON.parse(localStorage.getItem('gallery'));
@@ -23,6 +24,7 @@ export class GalleryService {
   }
 
   getModelsImages(): Observable<any> {
+    // Todo: stop using mock data
     // return this.http.get(this.cnt.connectTo(1, 'galeria/modelos'));
 
     const modelos = JSON.parse(localStorage.getItem('gallery'));

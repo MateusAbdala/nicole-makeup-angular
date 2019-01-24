@@ -12,21 +12,17 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    console.log(route, state);
+    console.log(route, state.url);
     const access = this.canAccess();
 
     if (!access) {
-      this.toastr.error('Efetue o login para acessar', 'Acesso Negado!');
+      this.toastr.error(`Efetue o login para conseguir acessar ${state.url}`, 'Acesso Negado!');
       this.router.navigate(['/cadastro/login']);
     }
     return access;
   }
 
   private canAccess(): boolean {
-    if (!localStorage.getItem('token')) {
-      return false;
-    }
-
     // TODO: switch de permissões e rotas
     return !!localStorage.getItem('token');
   }
