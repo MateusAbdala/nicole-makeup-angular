@@ -8,11 +8,11 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, },
-  { path: 'sobre', component: AboutComponent, },
-  { path: 'servicos', component: BeautyServicesComponent, },
-  { path: 'galeria', component: GalleryComponent, },
-  { path: 'contato', component: ContactComponent, },
+  { path: 'home', component: HomeComponent },
+  { path: 'sobre', component: AboutComponent },
+  { path: 'servicos', component: BeautyServicesComponent },
+  { path: 'galeria', component: GalleryComponent },
+  { path: 'contato', component: ContactComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'pagina-nao-encontrada', component: NotFoundComponent },
   { path: '**', component: NotFoundComponent }

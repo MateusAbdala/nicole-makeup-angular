@@ -9,15 +9,15 @@
         <div class="col-xl-7 price-right">
           <div class="tabs">
             <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
-              <li class="nav-item">
+              <li *ngIf="beautyServices[0].length > 0" class="nav-item">
                 <a class="nav-link active" id="pills-makeup-tab" data-toggle="pill" href="#pills-makeup" role="tab"
                   aria-controls="pills-makeup" aria-selected="true">Makeup</a>
               </li>
-              <li class="nav-item">
+              <li *ngIf="beautyServices[1].length > 0" class="nav-item">
                 <a class="nav-link" id="pills-eyebrows-tab" data-toggle="pill" href="#pills-eyebrows" role="tab"
                   aria-controls="pills-eyebrows" aria-selected="false">Sobrancelhas</a>
               </li>
-              <li class="nav-item">
+              <li *ngIf="beautyServices[2].length > 0" class="nav-item">
                 <a class="nav-link" id="pills-facial-tab" data-toggle="pill" href="#pills-facial" role="tab"
                   aria-controls="pills-facial" aria-selected="false">Depilação</a>
               </li>
@@ -28,7 +28,7 @@
                 <div class="menu-grids mt-4">
                   <div class="row t-in">
 
-                    <div *ngFor="let makeup of beautyServices[0]" class="col-md-6 price-main-info text-center">
+                    <div *ngFor="let makeup of beautyServices[0]" class="col-md-6 mb-3 price-main-info text-center">
                       <div class="price-inner card box-shadow">
                         <div class="card-body">
                           <h4 class="text-uppercase mb-3">{{makeup.title}}</h4>
