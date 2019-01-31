@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ScrollToDirective } from './directives/scroll-to.directive';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -16,7 +17,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  declarations: [SubscribeComponent, CarouselComponent, GridShortcutsComponent, ParallaxComponent, PricingComponent],
+  declarations: [
+    SubscribeComponent,
+    CarouselComponent,
+    GridShortcutsComponent,
+    ParallaxComponent,
+    PricingComponent,
+    ScrollToDirective
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -28,6 +36,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  exports: [SubscribeComponent, CarouselComponent, GridShortcutsComponent, ParallaxComponent, PricingComponent]
+  exports: [
+    SubscribeComponent,
+    CarouselComponent,
+    GridShortcutsComponent,
+    ParallaxComponent,
+    PricingComponent,
+    ScrollToDirective
+  ]
 })
 export class SharedModule { }
