@@ -11,6 +11,20 @@ export class CarouselComponent implements OnInit {
 
   private imagesForCarousel: Array<IAlbum> = [];
 
+  swiperConfig = {
+    direction: 'horizontal',
+    grabCursor: true,
+    spaceBetween: 15,
+    slidesPerView: 4,
+    autoplay: true,
+    speed: 1000,
+    navigation: {
+      nextEl: '.carousel-control-next',
+      prevEl: '.carousel-control-prev',
+    }
+  };
+
+
   constructor(
     private galleryService: GalleryService,
     private _lightbox: Lightbox

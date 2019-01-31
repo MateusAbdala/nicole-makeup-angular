@@ -3,24 +3,21 @@
     <div class="container py-xl-5 py-lg-3">
         <h3 class="title-wthree text-center mb-sm-5 mb-4">
             Makeup Delas<span class="mt-2 text-uppercase font-weight-bold">Minhas Modelos</span></h3>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-            <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                <div *ngFor="let image of imagesForCarousel; let i=index" class="carousel-item col-md-3" [ngClass]="{active: i == 0}">
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail">
-                            <a [title]="image.caption" class="thumb">
-                                <img class="img-fluid mx-auto d-block" (click)="open(i)" [src]="image.thumb" [alt]="image.caption">
-                            </a>
-                        </div>
-                    </div>
+        <div class="swiper-container" [swiper]="swiperConfig" [(index)]="index">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let image of imagesForCarousel; let i=index">
+                    <a class="thumb">
+                        <img class="img-fluid mx-auto d-block" (click)="open(i)" [src]="image.thumb" [alt]="image.caption">
+                    </a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <a class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next text-faded" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <a class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
