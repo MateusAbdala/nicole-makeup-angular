@@ -13,12 +13,12 @@
 	instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
 	phone:  '(51) 99790-8803',
 	email:  'nicole.leifheit.makeup@gmail.com',
-		location: {
-			address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
-			city:  'Canoas RS',
-			latitude:  '',
-			longitude:  ''
-		}
+    location: {
+        address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
+        city:  'Canoas RS',
+        latitude:  '',
+        longitude:  ''
+    }
 }
 ~~~
 
@@ -33,12 +33,12 @@
 	instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
 	phone:  '(51) 99790-8803',
 	email:  'nicole.leifheit.makeup@gmail.com',
-		location: {
-			address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
-			city:  'Canoas RS',
-			latitude:  '',
-			longitude:  ''
-		}
+    location: {
+        address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
+        city:  'Canoas RS',
+        latitude:  '',
+        longitude:  ''
+    }
 }
 ~~~
 
