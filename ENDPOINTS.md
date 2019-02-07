@@ -8,11 +8,11 @@
 **response**:
 ~~~javascript
 {
-	facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
-	whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
-	instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
-	phone:  '(51) 99790-8803',
-	email:  'nicole.leifheit.makeup@gmail.com',
+    facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
+    whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
+    instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
+    phone:  '(51) 99790-8803',
+    email:  'nicole.leifheit.makeup@gmail.com',
     location: {
         address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
         city:  'Canoas RS',
@@ -28,11 +28,11 @@
 **request body**:
 ~~~javascript
 {
-	facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
-	whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
-	instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
-	phone:  '(51) 99790-8803',
-	email:  'nicole.leifheit.makeup@gmail.com',
+    facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
+    whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
+    instagram:  'https://www.instagram.com/nicole_leifheit_makeup/',
+    phone:  '(51) 99790-8803',
+    email:  'nicole.leifheit.makeup@gmail.com',
     location: {
         address:  'Bairro Guajuviras - Rua Trinta, Nº 07',
         city:  'Canoas RS',
@@ -50,38 +50,38 @@
 **response**:
 ~~~javascript
 [
-	{
-		id:  1,
-		src:  'assets/images/g1.jpg',
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/g1.jpg',
-		order:  null,
-		modelsList:  false
-	},
-	{
-		id:  2,
-		src:  'assets/images/g2.jpg',
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/g2.jpg',
-		order:  null,
-		modelsList:  false
-	},
-	{
-		id:  10,
-		src:  'assets/images/m2.jpg'
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/m2.jpg',
-		order:  null,
-		modelsList:  true
-	},
-	{
-		id:  17,
-		src:  'assets/images/m9.jpg',
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/m9.jpg',
-		order:  null,
-		modelsList:  true
-	}
+    {
+        id:  1,
+        src:  'assets/images/g1.jpg',
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/g1.jpg',
+        order:  null,
+        modelsList:  false
+    },
+    {
+        id:  2,
+        src:  'assets/images/g2.jpg',
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/g2.jpg',
+        order:  null,
+        modelsList:  false
+    },
+    {
+        id:  10,
+        src:  'assets/images/m2.jpg'
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/m2.jpg',
+        order:  null,
+        modelsList:  true
+    },
+    {
+        id:  17,
+        src:  'assets/images/m9.jpg',
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/m9.jpg',
+        order:  null,
+        modelsList:  true
+    }
 ]
 ~~~
 
@@ -99,12 +99,12 @@ FormData: File
 **request body**:
 ~~~javascript
 {
-	id:  number,
-	src:  string,
-	caption:  string,
-	thumb:  string,
-	order:  number,
-	modelsList:  boolean
+    id:  number,
+    src:  string,
+    caption:  string,
+    thumb:  string,
+    order:  number,
+    modelsList:  boolean
 }
 ~~~
 
@@ -119,22 +119,22 @@ FormData: File
 **response**:
 ~~~javascript
 [
-	{
-		id:  10,
-		src:  'assets/images/m2.jpg'
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/m2.jpg',
-		order:  null,
-		modelsList:  true
-	},
-	{
-		id:  17,
-		src:  'assets/images/m9.jpg',
-		caption:  'Descrição da Imagem',
-		thumb:  'assets/images/m9.jpg',
-		order:  null,
-		modelsList:  true
-	}
+    {
+        id:  10,
+        src:  'assets/images/m2.jpg'
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/m2.jpg',
+        order:  null,
+        modelsList:  true
+    },
+    {
+        id:  17,
+        src:  'assets/images/m9.jpg',
+        caption:  'Descrição da Imagem',
+        thumb:  'assets/images/m9.jpg',
+        order:  null,
+        modelsList:  true
+    }
 ]
 ~~~
 
@@ -144,14 +144,14 @@ FormData: File
 **request body**:
 ~~~javascript
 [
-	{
-		id:  10,
-		order:  0
-	},
-	{
-		id:  17,
-		order:  1
-	}
+    {
+        id:  10,
+        order:  0
+    },
+    {
+        id:  17,
+        order:  1
+    }
 ]
 ~~~
 
