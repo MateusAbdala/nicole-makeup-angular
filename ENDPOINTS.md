@@ -6,7 +6,7 @@
 >Deve retornar os dados institucionais do site.
 
 **response**:
-~~~json
+~~~javascript
 {
 	facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
 	whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
@@ -26,7 +26,7 @@
 >Deve alterar os dados institucionais do site.
 
 **request body**:
-~~~json
+~~~javascript
 {
 	facebook:  'https://www.facebook.com/NicoleLeifheitMakeup/',
 	whatsApp:  'https://api.whatsapp.com/send?1=pt_BR&phone=5551997908803',
@@ -48,7 +48,7 @@
 >Deve retornar todas as imagens da galeria do site.
 
 **response**:
-~~~json
+~~~javascript
 [
 	{
 		id:  1,
@@ -89,7 +89,7 @@
 >Deve criar uma imagem na galeria, gerando thumb*.
 
 **request body**:
-~~~json
+~~~javascript
 FormData: File
 ~~~
 
@@ -97,7 +97,7 @@ FormData: File
 >Deve alterar uma imagem na galeria.
 
 **request body**:
-~~~json
+~~~javascript
 {
 	id:  number,
 	src:  string,
@@ -117,7 +117,7 @@ FormData: File
 >deve retornar todas as imagens da galeria do site quando `modelList === true`.
 
 **response**:
-~~~json
+~~~javascript
 [
 	{
 		id:  10,
@@ -142,7 +142,7 @@ FormData: File
 >alterar a ordem de exibição das modelos
 
 **request body**:
-~~~json
+~~~javascript
 [
 	{
 		id:  10,
