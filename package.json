@@ -27,6 +27,7 @@
     "ngx-lightbox": "^1.2.0",
     "ngx-swiper-wrapper": "^7.2.1",
     "ngx-toastr": "^9.1.1",
+    "node-sass": "^4.13.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
